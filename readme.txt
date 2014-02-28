@@ -60,4 +60,5 @@ Upload the plugin to your /wp-contents/plugins/ directory.
 
 == Changelog ==
 0.1 - First version
+
 0.1.1 - Problems with the style of the legend fixed.
