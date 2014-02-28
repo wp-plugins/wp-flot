@@ -57,5 +57,9 @@ Upload the plugin to your /wp-contents/plugins/ directory.
 * Make sure your data doesn't contain any errors, such as a misplaced comma. The web inspector of your browser can help you with this.
 * Check the source of the page, if the javascript contains an html tags, such as p or br, there probably is a problem with the wpautop filter.
 
+= The legend looks weird =
+
+The legend uses a table-element, which is styled by your theme's CSS. In many themes, a table is set to a width of 100%, causing your legend to span the entire chart.
+
 == Changelog ==
 0.1 - First version
