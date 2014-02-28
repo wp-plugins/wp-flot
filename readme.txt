@@ -3,6 +3,7 @@ Contributors: YSH
 Tags: chart, flot, shortcode
 Requires at least: 2.5
 Tested up to: 3.8.1
+Stable tag: 0.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +14,7 @@ This plugin adds shortcodes for line charts and pie charts, created with the Flo
 
 For more information on Flot: http://www.flotcharts.org/
 
-Usage:
+= Usage =
 
 Set a custom field 'flot' to 'yes', so the plugin knows to load the required javascript. If you wish you can add these files to your theme on all pages, so this step is not needed. It isn't automatically loaded to reduce page size.
 
@@ -57,9 +58,6 @@ Upload the plugin to your /wp-contents/plugins/ directory.
 * Make sure your data doesn't contain any errors, such as a misplaced comma. The web inspector of your browser can help you with this.
 * Check the source of the page, if the javascript contains an html tags, such as p or br, there probably is a problem with the wpautop filter.
 
-= The legend looks weird =
-
-The legend uses a table-element, which is styled by your theme's CSS. In many themes, a table is set to a width of 100%, causing your legend to span the entire chart.
-
 == Changelog ==
 0.1 - First version
+0.1.1 - Problems with the style of the legend fixed.

@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.1
+Version: 0.1.1
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
@@ -27,7 +27,7 @@ License: GPLv2
 
 // Script
 	
-	function flot_scripts() {
+function flot_scripts() {
 	
 	$flot = get_post_meta( get_the_ID(), 'flot', true );
 	
@@ -42,6 +42,31 @@ License: GPLv2
 		wp_enqueue_script('flot-resize');
 		wp_enqueue_script('flot-pie');
 		wp_enqueue_script('flot_data');
+		
+		function legendstyle() {
+		
+			$legendstyle = <<<STYLE
+<style type="text/css">
+.legend table {
+	width: auto;
+	border: 0px;
+}
+
+.legend tr {
+	border: 0px;
+}
+.legend td {
+	padding: 5px;
+	font-size: 12px;
+	border: 0px;
+}
+</style>
+STYLE;
+		
+		echo $legendstyle;
+		}
+		
+		add_action('wp_head', 'legendstyle');
 		
 	}
 	
