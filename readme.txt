@@ -71,7 +71,6 @@ Upload the plugin to your /wp-contents/plugins/ directory, then activate via the
 == Screenshots ==
 
 1. Line chart made with WP Flot.
-
 2. By putting the shortcode inside a <div> set to float, you can have your posts flow around the charts.
 
 == Changelog ==
