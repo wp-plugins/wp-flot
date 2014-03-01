@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.1.1
+Version: 0.1.2
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
@@ -144,6 +144,68 @@ jQuery(document).ready(function($){
 HTML;
 }
 
+function barchart_shortcode( $atts, $content ) {
+	extract( shortcode_atts( array(
+		'name' => 'Chart',
+		'height' => '400px',
+		'width' => '100%',
+		'fill' => 'true',
+		'maxx' => 'null',
+		'maxy' => 'null',
+		'minx' => 'null',
+		'miny' => 'null',
+		'legend' => 'true',
+		'horizontal' => 'false'
+	), $atts ) );
+		
+	static $number = 0;
+	$number++;
+	
+	$content = strip_tags($content);
+		
+	return <<<HTML
+	<div id="bararea$number" style="height: {$height}; width: {$width};">
+	</div>
+	<script type="text/javascript">
+jQuery(document).ready(function($){
+	var bardataseries$number = [
+		$content
+	];
+
+	var baroptions = {
+			series: {
+				bars: {
+					show: true,
+					align: "center",
+					barWidth: 0.5,
+					horizontal: {$horizontal}
+				}
+			},
+			legend: {
+				show: {$legend},
+				backgroundOpacity: 0.7
+			},
+			grid: {
+				backgroundColor: null
+			},
+			yaxis: {
+				min: {$miny},
+				max: {$maxy},
+			},
+			xaxis: {
+				min: {$minx},
+				max: {$maxx}
+			},
+	};
+	
+	var bararea$number = $("#bararea$number");  
+	var barplot$number = $.plot( bararea$number , bardataseries$number, baroptions ); 
+
+});
+</script>
+HTML;
+}
+
 function piechart_shortcode( $atts, $content ) {
 	extract( shortcode_atts( array(
 		'name' => 'Chart',
@@ -186,7 +248,7 @@ jQuery(document).ready(function($){
 			},
 			grid: {
 				backgroundColor: null
-			},
+			}
 	};
 	
 	var piearea$number = $("#piearea$number");  
@@ -196,12 +258,14 @@ jQuery(document).ready(function($){
 </script>
 HTML;
 }
+
 add_shortcode( 'linechart', 'linechart_shortcode' );
 add_shortcode( 'piechart', 'piechart_shortcode' );
+add_shortcode( 'barchart', 'barchart_shortcode' );
 
 add_filter( 'no_texturize_shortcodes', 'shortcodes_to_exempt_from_wptexturize' );
 function shortcodes_to_exempt_from_wptexturize($shortcodes){
-    $shortcodes = array('linechart', 'piechart');
+    $shortcodes = array('linechart', 'piechart', 'barchart');
     return $shortcodes;
 };
 
