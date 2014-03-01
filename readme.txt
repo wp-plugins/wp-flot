@@ -72,6 +72,8 @@ Upload the plugin to your /wp-contents/plugins/ directory, then activate via the
 
 1. Line chart made with WP Flot.
 
+2. By putting the shortcode inside a <div> set to float, you can have your posts flow around the charts.
+
 == Changelog ==
 * 0.1 - First version
 * 0.1.1 - Problems with the style of the legend fixed.
