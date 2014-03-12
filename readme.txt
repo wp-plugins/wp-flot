@@ -3,7 +3,7 @@ Contributors: YSH
 Tags: chart, graph, flot, shortcode
 Requires at least: 2.5
 Tested up to: 3.8.1
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,9 +71,11 @@ Upload the plugin to your /wp-contents/plugins/ directory, then activate via the
 == Screenshots ==
 
 1. Line chart made with WP Flot.
+
 2. By putting the shortcode inside a <div> set to float, you can have your posts flow around the charts.
 
 == Changelog ==
 * 0.1 - First version
 * 0.1.1 - Problems with the style of the legend fixed.
 * 0.1.2 - Added barcharts.
+* 0.1.3 - Added translation: Dutch. Small bug fixes.
