@@ -69,7 +69,7 @@ Upload the plugin to your /wp-contents/plugins/ directory, then activate via the
 
 = I want a fancy graph not supported by the shortcodes =
 
-Flot supports much more advanced graphs than are supported with these shortcodes, but you can add these manually. If you set the custom field 'flot' to 'yes', the plugin will load the Flot for you. You can then just add your own javascript code in the editor. Check the Flot websites for a number of [examples](http://www.flotcharts.org/flot/examples/).
+Flot supports much more advanced graphs than are supported with these shortcodes, but you can add these manually. If you set the custom field 'flot' to 'yes', the plugin will load Flot for you. You can then just add your own javascript code in the editor. Check the Flot websites for a number of [examples](http://www.flotcharts.org/flot/examples/).
 
 == Screenshots ==
 
