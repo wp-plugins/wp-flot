@@ -12,7 +12,7 @@ Adds shortcodes to easily add line, pie and bar charts to your pages using the F
 == Description ==
 This plugin adds shortcodes for line, pie and bar charts, created with the Flot javascript library.
 
-For more information on Flot: http://www.flotcharts.org/
+For more information on Flot see their [website](http://www.flotcharts.org).
 
 = Usage =
 Use the [linechart], [piechart] or [barchart] shortcodes, with the data enclosed between the tags (see example). You can further change the appearance of your chart by using a number of attributes, a full list of which can be seen [here](http://www.youssouhaagsman.nl/wpflot/index.htm#attributes "WP Flot").
@@ -54,7 +54,7 @@ data:	[[1, 6],[2, 4],[3, 5],[4, 6],[5, 14],[6, 5],[7, 12]] },
 { label: "More bars",
 data:	[[1.5, 3],[2.5, 3],[3.5, 15],[4.5, 3],[5.5, 10],[6.5, 11],[7.5, 10]] }
 [/barchart]`
-Please note that in Flot, a bar chart reacts like a line chart. If you have two data series with similar positions on the x-axis, they will overlap instead of showing side by side. Also, you both values need to be a number, no text.
+Please note that in Flot, a bar chart reacts like a line chart. If you have two data series with similar positions on the x-axis, they will overlap instead of showing side by side. Also, you both need values to be a number, no text.
 
 == Installation ==
 Upload the plugin to your /wp-contents/plugins/ directory, then activate via the plugin menu.
