@@ -3,7 +3,7 @@ Contributors: YSH
 Tags: chart, graph, flot, shortcode
 Requires at least: 2.5
 Tested up to: 3.8.1
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,10 +15,9 @@ This plugin adds shortcodes for line, pie and bar charts, created with the Flot 
 For more information on Flot: http://www.flotcharts.org/
 
 = Usage =
-
-Set a custom field 'flot' to 'yes', so the plugin knows to load the required javascript. If you wish you can add these files to your theme on all pages, so this step is not needed. It isn't automatically loaded to reduce page size.
-
 Use the [linechart], [piechart] or [barchart] shortcodes, with the data enclosed between the tags (see example). You can further change the appearance of your chart by using a number of attributes, a full list of which can be seen [here](http://www.youssouhaagsman.nl/wpflot/index.htm#attributes "WP Flot").
+
+The javascript file is not loaded on all pages to reduce pageload, but will be automatically added to all pages using the shortcodes after it has been loaded once. Alternatively, you can set a custom field 'flot' to 'yes'.
 
 **Linechart example:**
 
@@ -66,7 +65,11 @@ Upload the plugin to your /wp-contents/plugins/ directory, then activate via the
 
 * Make sure your data doesn't contain any errors, such as a misplaced comma. The web inspector of your browser can help you with this.
 * Check the source of the page, if the javascript contains an html tags, such as p or br, there probably is a problem with the wpautop filter.
-* In order to reduce pageload on the rest of your site, the plugin only loads the Flot javascript on pages with the custom field 'flot' set to 'yes'.
+* If this is the first time you view your page, try reloading. The necessary files are not included on the first time the page is loaded.
+
+= I want a fancy graph not supported by the shortcodes =
+
+Flot supports much more advanced graphs than are supported with these shortcodes, but you can add these manually. If you set the custom field 'flot' to 'yes', the plugin will load the Flot for you. You can then just add your own javascript code in the editor. Check the Flot websites for a number of [examples](http://www.flotcharts.org/flot/examples/).
 
 == Screenshots ==
 
@@ -79,3 +82,4 @@ Upload the plugin to your /wp-contents/plugins/ directory, then activate via the
 * 0.1.1 - Problems with the style of the legend fixed.
 * 0.1.2 - Added barcharts.
 * 0.1.3 - Added translation: Dutch. Small bug fixes.
+* 0.1.4 - No longer needed to set shortcodes. Reduced size for javascript files. Graphs will show properly on home pages, categories etc.

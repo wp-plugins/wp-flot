@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.1.3
+Version: 0.1.4
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
@@ -27,22 +27,17 @@ License: GPLv2
 
 // Script
 	
-load_plugin_textdomain('wpflot', false, basename( dirname( __FILE__ ) ) . '/languages' );	
+load_plugin_textdomain('wpflot', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	
 function flot_scripts() {
 	
 	$flot = get_post_meta( get_the_ID(), 'flot', true );
 	
-	if($flot == 'yes') {
+	if($flot == 'yes' || is_home() || is_category() || is_tag() || is_archive()) {
 	
-		wp_register_script('flot', plugins_url( 'js/jquery.flot.min.js', __FILE__ ) ,array('jquery'));
-		wp_register_script('flot-stacking', plugins_url( 'js/jquery.flot.stacking.min.js', __FILE__ ) ,array('jquery'));
-		wp_register_script('flot-resize', plugins_url( 'js/jquery.flot.resize.min.js', __FILE__ ),array('jquery', 'flot'));
-		wp_register_script('flot-pie', plugins_url( 'js/jquery.flot.pie.min.js', __FILE__ ) ,array('jquery', 'flot'));
-	
+		wp_register_script('flot', plugins_url( 'js/jquery.flot.all.min.js', __FILE__ ) ,array('jquery'));
+		
 		wp_enqueue_script('flot');
-		wp_enqueue_script('flot-resize');
-		wp_enqueue_script('flot-pie');
 		
 		function legendstyle() {
 		
@@ -97,6 +92,11 @@ function linechart_shortcode( $atts, $content ) {
 	
 	$content = strip_tags($content);
 		
+	if (get_post_meta( get_the_ID(), 'flot', true ) !== 'yes')
+	{
+	update_post_meta( get_the_ID(), 'flot', 'yes');
+	}
+		
 	return <<<HTML
 	<div id="plotarea$number" style="height: {$height}; width: {$width};">
 	</div>
@@ -129,7 +129,7 @@ jQuery(document).ready(function($){
 			},
 			yaxis: {
 				min: {$miny},
-				max: {$maxy},
+				max: {$maxy}
 			},
 			xaxis: {
 				min: {$minx},
@@ -162,6 +162,11 @@ function barchart_shortcode( $atts, $content ) {
 	static $number = 0;
 	$number++;
 	
+	if (get_post_meta( get_the_ID(), 'flot', true ) !== 'yes')
+	{
+	update_post_meta( get_the_ID(), 'flot', 'yes');
+	}
+	
 	$content = strip_tags($content);
 		
 	return <<<HTML
@@ -191,7 +196,7 @@ jQuery(document).ready(function($){
 			},
 			yaxis: {
 				min: {$miny},
-				max: {$maxy},
+				max: {$maxy}
 			},
 			xaxis: {
 				min: {$minx},
@@ -219,6 +224,11 @@ function piechart_shortcode( $atts, $content ) {
 		
 	static $number = 0;
 	$number++;
+	
+	if (get_post_meta( get_the_ID(), 'flot', true ) !== 'yes')
+	{
+	update_post_meta( get_the_ID(), 'flot', 'yes');
+	}
 	
 	$content = strip_tags($content);
 	
@@ -266,8 +276,8 @@ add_shortcode( 'linechart', 'linechart_shortcode' );
 add_shortcode( 'piechart', 'piechart_shortcode' );
 add_shortcode( 'barchart', 'barchart_shortcode' );
 
-add_filter( 'no_texturize_shortcodes', 'shortcodes_to_exempt_from_wptexturize' );
-function shortcodes_to_exempt_from_wptexturize($shortcodes){
+add_filter( 'no_texturize_shortcodes', 'wpf_no_wptexturize' );
+function wpf_no_wptexturize($shortcodes){
     $shortcodes = array('linechart', 'piechart', 'barchart');
     return $shortcodes;
 };
