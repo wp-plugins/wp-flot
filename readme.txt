@@ -54,7 +54,7 @@ data:	[[1, 6],[2, 4],[3, 5],[4, 6],[5, 14],[6, 5],[7, 12]] },
 { label: "More bars",
 data:	[[1.5, 3],[2.5, 3],[3.5, 15],[4.5, 3],[5.5, 10],[6.5, 11],[7.5, 10]] }
 [/barchart]`
-Please note that in Flot, a bar chart reacts like a line chart. If you have two data series with similar positions on the x-axis, they will overlap instead of showing side by side. Also, you both need values to be a number, no text.
+Please note that in Flot, a bar chart reacts like a line chart. If you have two data series with similar positions on the x-axis, they will overlap instead of showing side by side. Also, you need both values to be a number, no text.
 
 == Installation ==
 Upload the plugin to your /wp-contents/plugins/ directory, then activate via the plugin menu.
