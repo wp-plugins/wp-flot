@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.1.4
+Version: 0.1.5
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
