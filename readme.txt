@@ -3,7 +3,7 @@ Contributors: YSH
 Tags: chart, graph, flot, shortcode
 Requires at least: 2.5
 Tested up to: 3.9
-Stable tag: 0.1.4
+Stable tag: 0.1.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,3 +83,4 @@ Flot supports much more advanced graphs than are supported with these shortcodes
 * 0.1.2 - Added barcharts.
 * 0.1.3 - Added translation: Dutch. Small bug fixes.
 * 0.1.4 - No longer needed to set shortcodes. Reduced size for javascript files. Graphs will show properly on home pages, categories etc.
+* 0.1.5 - Update to Flot 0.8.3.
