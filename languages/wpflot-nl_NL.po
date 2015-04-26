@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Flot v0.2\n"
+"Project-Id-Version: WP Flot v0.1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-03-12 19:53:54+0000\n"
+"PO-Revision-Date: 2015-04-26 19:47:46+0000\n"
 "Last-Translator: Youssou Haagsman <youssouhaagsman@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,14 +20,95 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: wpflot.php:231
+#: wpflot.php:235
 #@ wpflot
 msgid "Other"
 msgstr "Overig"
 
-#: wpflot.php:296
-#: wpflot.php:297
-#@ myPlugin
-msgid "WP Flot"
-msgstr ""
+#: wpflot.php:473
+#@ wpflot
+msgid "The size of the doughnut hole, as a number between 0 and 1."
+msgstr "De grootte van het gat, uitgedrukt als een nummer tussen 0 en 1. Gebruik voor decimalen een punt."
+
+#: wpflot.php:300
+#: wpflot.php:381
+#: wpflot.php:447
+#@ wpflot
+msgid "Data"
+msgstr "Data"
+
+#: wpflot.php:305
+#@ wpflot
+msgid "Name"
+msgstr "Naam"
+
+#: wpflot.php:310
+#: wpflot.php:386
+#: wpflot.php:452
+#@ wpflot
+msgid "Height"
+msgstr "Hoogte"
+
+#: wpflot.php:316
+#: wpflot.php:392
+#: wpflot.php:458
+#@ wpflot
+msgid "Width"
+msgstr "Breedte"
+
+#: wpflot.php:322
+#@ wpflot
+msgid "Points"
+msgstr "Punten"
+
+#: wpflot.php:327
+#@ wpflot
+msgid "Fill"
+msgstr "Opvullen"
+
+#: wpflot.php:332
+#@ wpflot
+msgid "Steps"
+msgstr "Stappen"
+
+#: wpflot.php:337
+#: wpflot.php:403
+#: wpflot.php:464
+#@ wpflot
+msgid "Legend"
+msgstr "Legenda"
+
+#: wpflot.php:342
+#: wpflot.php:408
+#@ wpflot
+msgid "Maximum value X-axis"
+msgstr "Maximumwaarde X-as"
+
+#: wpflot.php:347
+#: wpflot.php:413
+#@ wpflot
+msgid "Maximum value Y-axis"
+msgstr "Maximumwaarde Y-as"
+
+#: wpflot.php:352
+#: wpflot.php:418
+#@ wpflot
+msgid "Minimum value X-axis"
+msgstr "Minimumwaarde X-as"
+
+#: wpflot.php:357
+#: wpflot.php:423
+#@ wpflot
+msgid "Minimum value Y-axis"
+msgstr "Minimumwaarde Y-as"
+
+#: wpflot.php:398
+#@ wpflot
+msgid "Horizontal"
+msgstr "Horizontaal"
+
+#: wpflot.php:469
+#@ wpflot
+msgid "Doughnut hole"
+msgstr "Donutgat"
 

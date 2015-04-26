@@ -9,7 +9,7 @@ Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
 */
 
-/*  Copyright 2014 Youssou Haagsman
+/*  Copyright 2015 Youssou Haagsman
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 		$content
 	];
 
-	var options = {
+	var options$number = {
 			series: {
 				points: {
 					show: {$points},
@@ -138,12 +138,12 @@ jQuery(document).ready(function($){
 	};
 	
 	var plotarea$number = $("#plotarea$number");  
-	var plot$number = $.plot( plotarea$number , dataseries$number, options ); 
+	var plot$number = $.plot( plotarea$number , dataseries$number, options$number ); 
 
 });
 </script>
 HTML;
-}
+}	
 
 function barchart_shortcode( $atts, $content ) {
 	extract( shortcode_atts( array(
@@ -178,7 +178,7 @@ jQuery(document).ready(function($){
 		$content
 	];
 
-	var baroptions = {
+	var baroptions$number = {
 			series: {
 				bars: {
 					show: true,
@@ -205,7 +205,7 @@ jQuery(document).ready(function($){
 	};
 	
 	var bararea$number = $("#bararea$number");  
-	var barplot$number = $.plot( bararea$number , bardataseries$number, baroptions ); 
+	var barplot$number = $.plot( bararea$number , bardataseries$number, baroptions$number ); 
 
 });
 </script>
@@ -215,7 +215,7 @@ HTML;
 function piechart_shortcode( $atts, $content ) {
 	extract( shortcode_atts( array(
 		'name' => 'Chart',
-		'height' => '300px',
+		'height' => '400px',
 		'width' => '100%',
 		'legend' => 'false',
 		'donut' => '0',
@@ -239,7 +239,7 @@ function piechart_shortcode( $atts, $content ) {
 	</div>
 	<script type="text/javascript">
 jQuery(document).ready(function($){
-	var dataseries$number = [
+	var pie_dataseries$number = [
 		$content
 	];
 
@@ -265,7 +265,7 @@ jQuery(document).ready(function($){
 	};
 	
 	var piearea$number = $("#piearea$number");  
-	var pieplot$number = $.plot( piearea$number , dataseries$number, options$number ); 
+	var pieplot$number = $.plot( piearea$number , pie_dataseries$number, options$number ); 
 
 });
 </script>
@@ -275,6 +275,211 @@ HTML;
 add_shortcode( 'linechart', 'linechart_shortcode' );
 add_shortcode( 'piechart', 'piechart_shortcode' );
 add_shortcode( 'barchart', 'barchart_shortcode' );
+
+add_action( 'admin_init', function() {
+	if(is_admin())
+{
+		if ( is_plugin_active( 'shortcode-ui/shortcode-ui.php' ) ) {
+			
+		shortcode_ui_register_for_shortcode(
+				'linechart',
+				array(
+
+					// Display label. String. Required.
+					'label' => 'Linechart',
+
+					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
+					'listItemImage' => 'dashicons-chart-line',
+					
+					/* 'inner_content' => array(
+						'label' => 'Data',
+					), */
+
+					'attrs' => array(
+						array(
+							'label' => __( 'Data', 'wpflot' ),
+							'attr'  => 'content',
+							'type'  => 'textarea',
+						),
+						array(
+							'label' => __( 'Name', 'wpflot' ),
+							'attr'  => 'name',
+							'type'  => 'text',
+						),
+						array(
+							'label' => __( 'Height', 'wpflot' ),
+							'attr'  => 'height',
+							'type'  => 'text',
+							'placeholder' => '400px',
+						),
+						array(
+							'label' => __( 'Width', 'wpflot' ),
+							'attr'  => 'width',
+							'type'  => 'text',
+							'placeholder' => '100%',
+						),
+						array(
+							'label' => __( 'Points', 'wpflot' ),
+							'attr'  => 'points',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Fill', 'wpflot' ),
+							'attr'  => 'fill',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Steps', 'wpflot' ),
+							'attr'  => 'steps',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Legend', 'wpflot' ),
+							'attr'  => 'steps',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Maximum value X-axis', 'wpflot' ),
+							'attr'  => 'maxx',
+							'type'  => 'number',
+						),
+						array(
+							'label' => __( 'Maximum value Y-axis', 'wpflot' ),
+							'attr'  => 'maxy',
+							'type'  => 'number',
+						),
+						array(
+							'label' => __( 'Minimum value X-axis', 'wpflot' ),
+							'attr'  => 'minx',
+							'type'  => 'number',
+						),
+						array(
+							'label' => __( 'Minimum value Y-axis', 'wpflot' ),
+							'attr'  => 'miny',
+							'type'  => 'number',
+						),
+					),
+				)
+			);
+			
+			shortcode_ui_register_for_shortcode(
+				'barchart',
+				array(
+
+					// Display label. String. Required.
+					'label' => 'Barchart',
+
+					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
+					'listItemImage' => 'dashicons-chart-bar',
+					
+					/* 'inner_content' => array(
+						'label' => 'Data',
+					), */
+
+					'attrs' => array(
+						array(
+							'label' => __( 'Data', 'wpflot' ),
+							'attr'  => 'content',
+							'type'  => 'textarea',
+						),
+						array(
+							'label' => __( 'Height', 'wpflot' ),
+							'attr'  => 'height',
+							'type'  => 'text',
+							'placeholder' => '400px',
+						),
+						array(
+							'label' => __( 'Width', 'wpflot' ),
+							'attr'  => 'width',
+							'type'  => 'text',
+							'placeholder' => '100%',
+						),
+						array(
+							'label' => __( 'Horizontal', 'wpflot' ),
+							'attr'  => 'horizontal',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Legend', 'wpflot' ),
+							'attr'  => 'steps',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Maximum value X-axis', 'wpflot' ),
+							'attr'  => 'maxx',
+							'type'  => 'number',
+						),
+						array(
+							'label' => __( 'Maximum value Y-axis', 'wpflot' ),
+							'attr'  => 'maxy',
+							'type'  => 'number',
+						),
+						array(
+							'label' => __( 'Minimum value X-axis', 'wpflot' ),
+							'attr'  => 'minx',
+							'type'  => 'number',
+						),
+						array(
+							'label' => __( 'Minimum value Y-axis', 'wpflot' ),
+							'attr'  => 'miny',
+							'type'  => 'number',
+						),
+					),
+				)
+			);
+			
+			shortcode_ui_register_for_shortcode(
+				'piechart',
+				array(
+
+					// Display label. String. Required.
+					'label' => 'Piechart',
+
+					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
+					'listItemImage' => 'dashicons-chart-pie',
+					
+					/* 'inner_content' => array(
+						'label' => 'Data',
+					), */
+
+					'attrs' => array(
+						array(
+							'label' => __( 'Data', 'wpflot' ),
+							'attr'  => 'content',
+							'type'  => 'textarea',
+						),
+						array(
+							'label' => __( 'Height', 'wpflot' ),
+							'attr'  => 'height',
+							'type'  => 'text',
+							'placeholder' => '400px',
+						),
+						array(
+							'label' => __( 'Width', 'wpflot' ),
+							'attr'  => 'width',
+							'type'  => 'text',
+							'placeholder' => '100%',
+						),
+						array(
+							'label' => __( 'Legend', 'wpflot' ),
+							'attr'  => 'steps',
+							'type'  => 'checkbox',
+						),
+						array(
+							'label' => __( 'Doughnut hole', 'wpflot' ),
+							'attr'  => 'donut',
+							'type'  => 'number',
+							'placeholder' => '0',
+							'description' => __( 'The size of the doughnut hole, as a number between 0 and 1.', 'wpflot' )
+						),
+					),
+				)
+			);
+			
+		}
+	}
+
+} );
 
 add_filter( 'no_texturize_shortcodes', 'wpf_no_wptexturize' );
 function wpf_no_wptexturize($shortcodes){
