@@ -84,4 +84,4 @@ Flot supports much more advanced graphs than are supported with these shortcodes
 * 0.1.3 - Added translation: Dutch. Small bug fixes.
 * 0.1.4 - No longer needed to set shortcodes. Reduced size for javascript files. Graphs will show properly on home pages, categories etc.
 * 0.1.5 - Update to Flot 0.8.3.
-* 0.2 - Support for [Shortcodes UI plugin](https://wordpress.org/plugins/shortcodes-ui/).
+* 0.2 - Support for [Shortcode UI plugin](https://wordpress.org/plugins/shortcode-ui/).
