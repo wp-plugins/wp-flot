@@ -15,7 +15,7 @@ This plugin adds shortcodes for line, pie and bar charts, created with the Flot 
 For more information on Flot see their [website](http://www.flotcharts.org).
 
 = Usage =
-Use the [linechart], [piechart] or [barchart] shortcodes, with the data enclosed between the tags (see example). You can further change the appearance of your chart by using a number of attributes, a full list of which can be seen [here](http://www.youssouhaagsman.nl/wpflot/index.htm#attributes "WP Flot").
+Use the [linechart], [piechart] or [barchart] shortcodes, with the data enclosed between the tags (see example). You can further change the appearance of your chart by using a number of attributes, a full list of which can be seen [here](http://www.youssouhaagsman.nl/wpflot/index.htm#attributes "WP Flot"). If you have the Shortcake plugin enabled, you can add the charts using the 'Add Media' button.
 
 The javascript file is not loaded on all pages to reduce pageload, but will be automatically added to all pages using the shortcodes after it has been loaded once. Alternatively, you can set a custom field 'flot' to 'yes'.
 
@@ -84,4 +84,4 @@ Flot supports much more advanced graphs than are supported with these shortcodes
 * 0.1.3 - Added translation: Dutch. Small bug fixes.
 * 0.1.4 - No longer needed to set shortcodes. Reduced size for javascript files. Graphs will show properly on home pages, categories etc.
 * 0.1.5 - Update to Flot 0.8.3.
-* 0.2 - Support for [Shortcode UI plugin](https://wordpress.org/plugins/shortcode-ui/).
+* 0.2 - Support for [Shortcake](https://wordpress.org/plugins/shortcode-ui/), a plugin to make adding shortcodes easier. Unfortunately, because of the Javascript requirement for the charts, they won't properly preview in TinyMCE.
