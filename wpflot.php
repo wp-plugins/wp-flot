@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.1.5
+Version: 0.2
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
@@ -286,7 +286,7 @@ add_action( 'admin_init', function() {
 				array(
 
 					// Display label. String. Required.
-					'label' => 'Linechart',
+					'label' => __( 'Linechart', 'wpflot' ),
 
 					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
 					'listItemImage' => 'dashicons-chart-line',
@@ -367,7 +367,7 @@ add_action( 'admin_init', function() {
 				array(
 
 					// Display label. String. Required.
-					'label' => 'Barchart',
+					'label' => __( 'Barchart', 'wpflot' ),
 
 					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
 					'listItemImage' => 'dashicons-chart-bar',
@@ -432,16 +432,9 @@ add_action( 'admin_init', function() {
 				'piechart',
 				array(
 
-					// Display label. String. Required.
-					'label' => 'Piechart',
-
-					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
+					'label' => __( 'Piechart', 'wpflot' ),
 					'listItemImage' => 'dashicons-chart-pie',
-					
-					/* 'inner_content' => array(
-						'label' => 'Data',
-					), */
-
+	//				'inner_content' => array('label' => __( 'Data', 'wpflot' )),
 					'attrs' => array(
 						array(
 							'label' => __( 'Data', 'wpflot' ),
