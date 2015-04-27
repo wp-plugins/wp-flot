@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.2
+Version: 0.2.1
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
@@ -277,30 +277,24 @@ add_shortcode( 'piechart', 'piechart_shortcode' );
 add_shortcode( 'barchart', 'barchart_shortcode' );
 
 add_action( 'admin_init', function() {
-	if(is_admin())
-{
-		if ( is_plugin_active( 'shortcode-ui/shortcode-ui.php' ) ) {
-			
+	if ( ! function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
+	/*	add_action( 'admin_notices', function(){
+			if ( current_user_can( 'activate_plugins' ) ) {
+				echo '<div class="error message"><p>__( 'It is recommended to enable Shortcake to make adding shortcodes easier.', 'wpflot' ),</p></div>';
+			}
+			}); */
+		return;
+	}
+	else {
 		shortcode_ui_register_for_shortcode(
 				'linechart',
 				array(
-
-					// Display label. String. Required.
 					'label' => __( 'Linechart', 'wpflot' ),
-
-					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
 					'listItemImage' => 'dashicons-chart-line',
-					
-					/* 'inner_content' => array(
-						'label' => 'Data',
-					), */
-
+					'inner_content' => array(
+						'label' => __( 'Data', 'wpflot' ),
+					),
 					'attrs' => array(
-						array(
-							'label' => __( 'Data', 'wpflot' ),
-							'attr'  => 'content',
-							'type'  => 'textarea',
-						),
 						array(
 							'label' => __( 'Name', 'wpflot' ),
 							'attr'  => 'name',
@@ -365,23 +359,12 @@ add_action( 'admin_init', function() {
 			shortcode_ui_register_for_shortcode(
 				'barchart',
 				array(
-
-					// Display label. String. Required.
 					'label' => __( 'Barchart', 'wpflot' ),
-
-					// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
 					'listItemImage' => 'dashicons-chart-bar',
-					
-					/* 'inner_content' => array(
+					'inner_content' => array(
 						'label' => 'Data',
-					), */
-
+					),
 					'attrs' => array(
-						array(
-							'label' => __( 'Data', 'wpflot' ),
-							'attr'  => 'content',
-							'type'  => 'textarea',
-						),
 						array(
 							'label' => __( 'Height', 'wpflot' ),
 							'attr'  => 'height',
@@ -434,13 +417,8 @@ add_action( 'admin_init', function() {
 
 					'label' => __( 'Piechart', 'wpflot' ),
 					'listItemImage' => 'dashicons-chart-pie',
-	//				'inner_content' => array('label' => __( 'Data', 'wpflot' )),
+					'inner_content' => array('label' => __( 'Data', 'wpflot' )),
 					'attrs' => array(
-						array(
-							'label' => __( 'Data', 'wpflot' ),
-							'attr'  => 'content',
-							'type'  => 'textarea',
-						),
 						array(
 							'label' => __( 'Height', 'wpflot' ),
 							'attr'  => 'height',
@@ -470,7 +448,6 @@ add_action( 'admin_init', function() {
 			);
 			
 		}
-	}
 
 } );
 
