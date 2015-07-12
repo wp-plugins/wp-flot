@@ -3,7 +3,7 @@ Contributors: YSH
 Tags: chart, graph, flot, shortcode
 Requires at least: 2.5
 Tested up to: 4.2
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,3 +86,4 @@ Flot supports much more advanced graphs than are supported with these shortcodes
 * 0.1.5 - Update to Flot 0.8.3.
 * 0.2 - Support for [Shortcake](https://wordpress.org/plugins/shortcode-ui/), a plugin to make adding shortcodes easier. Unfortunately, because of the Javascript requirement for the charts, they won't properly preview in TinyMCE.
 * 0.2.1 - Update for Shortcake 0.3.
+* 0.2.2 - Update for Shortcake 0.4.

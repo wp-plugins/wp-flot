@@ -3,7 +3,7 @@
 Plugin Name: WP Flot
 Plugin URI: http://www.youssouhaagsman.nl/wpflot/
 Description: Shortcodes for Flot
-Version: 0.2.1
+Version: 0.2.2
 Author: Youssou Haagsman
 Author URI: http://www.youssouhaagsman.nl
 License: GPLv2
@@ -304,13 +304,18 @@ add_action( 'admin_init', function() {
 							'label' => __( 'Height', 'wpflot' ),
 							'attr'  => 'height',
 							'type'  => 'text',
-							'placeholder' => '400px',
+								'meta' => array(
+								'placeholder' => '400px',
+							),
+
 						),
 						array(
 							'label' => __( 'Width', 'wpflot' ),
 							'attr'  => 'width',
 							'type'  => 'text',
-							'placeholder' => '100%',
+								'meta' => array(
+								'placeholder' => '100%',
+							),
 						),
 						array(
 							'label' => __( 'Points', 'wpflot' ),
@@ -369,13 +374,17 @@ add_action( 'admin_init', function() {
 							'label' => __( 'Height', 'wpflot' ),
 							'attr'  => 'height',
 							'type'  => 'text',
-							'placeholder' => '400px',
+							'meta' => array(
+								'placeholder' => '400px',
+							),
 						),
 						array(
 							'label' => __( 'Width', 'wpflot' ),
 							'attr'  => 'width',
 							'type'  => 'text',
-							'placeholder' => '100%',
+								'meta' => array(
+								'placeholder' => '100%',
+							),
 						),
 						array(
 							'label' => __( 'Horizontal', 'wpflot' ),
@@ -423,13 +432,17 @@ add_action( 'admin_init', function() {
 							'label' => __( 'Height', 'wpflot' ),
 							'attr'  => 'height',
 							'type'  => 'text',
-							'placeholder' => '400px',
+								'meta' => array(
+								'placeholder' => '400px',
+							),
 						),
 						array(
 							'label' => __( 'Width', 'wpflot' ),
 							'attr'  => 'width',
 							'type'  => 'text',
-							'placeholder' => '100%',
+								'meta' => array(
+								'placeholder' => '100%',
+							),
 						),
 						array(
 							'label' => __( 'Legend', 'wpflot' ),
@@ -440,7 +453,9 @@ add_action( 'admin_init', function() {
 							'label' => __( 'Doughnut hole', 'wpflot' ),
 							'attr'  => 'donut',
 							'type'  => 'number',
-							'placeholder' => '0',
+								'meta' => array(
+								'placeholder' => '0',
+							),
 							'description' => __( 'The size of the doughnut hole, as a number between 0 and 1.', 'wpflot' )
 						),
 					),
