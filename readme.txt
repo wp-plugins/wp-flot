@@ -2,7 +2,7 @@
 Contributors: YSH
 Tags: chart, graph, flot, shortcode
 Requires at least: 2.5
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 0.2.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,29 +22,29 @@ The javascript file is not loaded on all pages to reduce pageload, but will be a
 **Linechart example:**
 
 `[linechart minx="1950" maxx="1965" miny="0" maxy="100" steps="false" fill="true" points="false" legend="true"]
-	       { label: "Series 1",
-		data:	[[1963, 43],
-				[1959, 48],
-				[1956, 50],
-				[1952, 30]]
+           { label: "Series 1",
+        data:	[[1963, 43],
+                [1959, 48],
+                [1956, 50],
+                [1952, 30]]
 },
-	{
-		label: "Series 2",							
-		data:
-			[[1952, 30],
-			[1956, 49],
-			[1959, 49],
-			[1963, 50]] }
+    {
+        label: "Series 2",
+        data:
+            [[1952, 30],
+            [1956, 49],
+            [1959, 49],
+            [1963, 50]] }
 [/linechart]`
 
 **Pie chart example:**
 `[piechart donut="0.5"]
 { label: "Series1",  data: 10},
-		{ label: "Series2",  data: 30},
-		{ label: "Series3",  data: 90},
-		{ label: "Series4",  data: 70},
-		{ label: "Series5",  data: 80},
-		{ label: "Series6",  data: 110}
+        { label: "Series2",  data: 30},
+        { label: "Series3",  data: 90},
+        { label: "Series4",  data: 70},
+        { label: "Series5",  data: 80},
+        { label: "Series6",  data: 110}
 [/piechart]`
 
 **Bar chart example:**
